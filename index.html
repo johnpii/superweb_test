@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Договор с дизайнером</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <h1 class="title has-text-centered">Заполните форму для оформления договора</h1>
+                <h2 class="title is-5 has-text-centered">Договор для сотрудничества с дизайнером</h2>
+
+                <form id="contractForm">
+                    <div class="field">
+                        <label for="contractType" class="label">Выберите тип договора</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" id="selfEmployed" name="contractType" value="self-employed" checked>
+                                Дизайнер самозанятый
+                            </label>
+                        </div>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" id="legalEntity" name="contractType" value="legal-entity">
+                                Дизайнер юр. лицо
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field" id="companyNameField" style="display: none;">
+                        <label for="companyName" class="label">Название компании</label>
+                        <div class="control">
+                            <input type="text" id="companyName" name="companyName" class="input">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="lastName" class="label">Фамилия</label>
+                        <div class="control">
+                            <input type="text" id="lastName" name="lastName" class="input" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="firstName" class="label">Имя</label>
+                        <div class="control">
+                            <input type="text" id="firstName" name="firstName" class="input" required>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="middleName" class="label">Отчество</label>
+                        <div class="control">
+                            <input type="text" id="middleName" name="middleName" class="input" required>
+                        </div>
+                    </div>
+
+                    <div class="field" id="postalAddressField" style="display: none;">
+                        <label for="postalAddress" class="label">Фактический адрес для обмена документами</label>
+                        <div class="control">
+                            <textarea id="postalAddress" name="postalAddress" class="textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field" id="legalAddressField" style="display: none;">
+                        <label for="legalAddress" class="label">Юридический адрес</label>
+                        <div class="control">
+                            <textarea id="legalAddress" name="legalAddress" class="textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="inn" class="label">ИНН</label>
+                        <div class="control">
+                            <input type="text" id="inn" name="inn" class="input" required>
+                        </div>
+                    </div>
+
+                    <div class="field" id="passportField">
+                        <label for="passport" class="label">Паспорт</label>
+                        <div class="control">
+                            <textarea id="passport" name="passport" class="textarea" required></textarea>
+                        </div>
+                        <p class="help">Серия, номер, кем выдан, дата выдачи, код подразделения, адрес регистрации</p>
+                    </div>
+
+                    <div class="field" id="kppField" style="display: none;">
+                        <label for="kpp" class="label">КПП</label>
+                        <div class="control">
+                            <input type="text" id="kpp" name="kpp" class="input">
+                        </div>
+                    </div>
+
+                    <div class="field" id="ogrnField" style="display: none;">
+                        <label for="ogrn" class="label">ОГРН</label>
+                        <div class="control">
+                            <input type="text" id="ogrn" name="ogrn" class="input">
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="bankDetails" class="label">Банковские реквизиты</label>
+                        <div class="control">
+                            <textarea id="bankDetails" name="bankDetails" class="textarea" required></textarea>
+                        </div>
+                        <p class="help">№ расчетного счета, № кор.счета, Название Банка, БИК банка</p>
+                    </div>
+
+                    <div class="field" id="basisField" style="display: none;">
+                        <label class="label">Подписант действует на основании:</label>
+                        <div class="control">
+                            <label class="radio">
+                                <input type="radio" name="basisType" value="charter">
+                                Устава
+                            </label>
+                            <br>
+                            <label class="radio">
+                                <input type="radio" name="basisType" value="power_of_attorney">
+                                Доверенности №, дата
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="signatureImage" class="label">Загрузите картинку подписи</label>
+                        <div class="file has-name is-right is-fullwidth">
+                            <label class="file-label">
+                                <input class="file-input" type="file" id="signatureImage" name="signatureImage"
+                                    required>
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">Загрузить</span>
+                                </span>
+                                <span class="file-name">
+                                    Выберите файл…
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="sealImage" class="label">Загрузите картинку печати</label>
+                        <div class="file has-name is-right is-fullwidth">
+                            <label class="file-label">
+                                <input class="file-input" type="file" id="sealImage" name="sealImage" required>
+                                <span class="file-cta">
+                                    <span class="file-icon">
+                                        <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label">Загрузить</span>
+                                </span>
+                                <span class="file-name">
+                                    Выберите файл…
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="content has-text-centered">
+                        Вам и менеджеру будет направлен договор с заполненными реквизитами. Мы с вами свяжемся.
+                    </div>
+
+                    <div class="field is-grouped is-justify-content-center">
+                        <button type="submit" class="button is-primary">Сформировать договор</button>
+                    </div>
+                </form>
+            </div>
+            <div id="successModal" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content has-text-centered">
+                    <div class="box">
+                        <p class="title">Форма успешно отправлена!</p>
+                        <button class="button is-primary" id="closeModal">Закрыть</button>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
+        </div>
+    </section>
+    <script src="app.js"></script>
+</body>
+
+</html>
